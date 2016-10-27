@@ -4,11 +4,9 @@ class BinaryTree
       neighbors = []
       neighbors << cell.north if cell.north
       neighbors << cell.east if cell.east
-      
-      neighbor = neighbors.sample
 
+      neighbor = neighbors.sample
       cell.link(neighbor) if neighbor
-      puts "Linked #{cell} to #{neighbor}"
     end
 
     grid
