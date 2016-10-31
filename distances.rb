@@ -17,6 +17,18 @@ class Distances
     @cells.keys
   end
 
+  def max
+    max_distance = 0
+    max_cell = @root
+    @cells.each do |cell, distance|
+      if distance > max_distance 
+        max_distance = distance
+        max_cell = cell
+      end
+    end
+    [max_cell, max_distance]
+  end
+
   def path_to(goal)
     current = goal
 
