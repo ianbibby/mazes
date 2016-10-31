@@ -59,7 +59,7 @@ class Grid
   end
 
   def contents_of(cell)
-    " " * cell_width
+    " "
   end
 
   def cell_width
