@@ -59,11 +59,17 @@ class Grid
   end
 
   def contents_of(cell)
-    " "
+    " " * cell_width
+  end
+
+  def cell_width
+    3
   end
 
   def to_s
-    output = "+" + "---+" * @columns + "\n"
+    dash_wall = "-" * cell_width
+    empt_wall = " " * cell_width
+    output = "+" + "#{dash_wall}+" * @columns + "\n"
 
     each_row do |row|
       top = "|"
@@ -76,7 +82,7 @@ class Grid
         east_boundary = (cell.linked?(cell.east) ? " " : "|")
         top << body << east_boundary
 
-        south_boundary = (cell.linked?(cell.south) ? "   " : "---")
+        south_boundary = (cell.linked?(cell.south) ? empt_wall : dash_wall)
         corner = "+"
         bottom << south_boundary << corner
       end
