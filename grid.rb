@@ -36,7 +36,7 @@ class Grid
 
   def random_cell
     row = rand @rows
-    col = rand @grid[@rows].count
+    col = rand @grid[row].count
     self[row,col]
   end
 

@@ -29,6 +29,10 @@ class Cell
     @links.key? cell
   end
 
+  def visited?
+    !@links.empty?
+  end
+
   def neighbors
     list = []
     list << north if north
