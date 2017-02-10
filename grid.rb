@@ -62,6 +62,10 @@ class Grid
     " "
   end
 
+  def background_color_for_cell(cell)
+    nil
+  end
+
   def cell_width
     3
   end
